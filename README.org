@@ -2,7 +2,8 @@
 
 Based on [[https://github.com/tonsky/datascript][Datascript]], a datalog dialect with some additional features useful for representing software facts. Datascript uses [[https://github.com/edn-format/edn][EDN notation]].
 
-* TODO
+* Future Work
 
-- Convert programs in Prolog/datalog syntax to Datascript
-- Provide a PureScript AST for EDN
+- Come up with some more useful queries.
+- Convert programs in Prolog/datalog syntax to Datascript.
+- Provide a PureScript AST for EDN.
