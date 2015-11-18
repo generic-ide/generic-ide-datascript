@@ -2,6 +2,8 @@
 
 Based on [[https://github.com/tonsky/datascript][Datascript]], a datalog dialect with some additional features useful for representing software facts. Datascript uses [[https://github.com/edn-format/edn][EDN notation]].
 
+[[file:doc/definedIn.png]]
+
 * Future Work
 
 - Come up with some more useful queries.
