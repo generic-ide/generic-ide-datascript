@@ -1,0 +1,22 @@
+{
+  "name": "generic-ide-datascript",
+  "version": "1.0.0",
+  "description": "Knowledge base of software facts in Datascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "ide",
+    "logic",
+    "purescript",
+    "datalog",
+    "datascript"
+  ],
+  "author": "Erik Post",
+  "license": "MIT",
+  "dependencies": {
+    "datascript": "^0.13.3",
+    "ramda": "^0.18.0"
+  }
+}
