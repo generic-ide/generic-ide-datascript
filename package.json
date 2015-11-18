@@ -4,7 +4,9 @@
   "description": "Knowledge base of software facts in Datascript.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "gr": "mkdir tmp; node index.js && dot -Kdot -Tpng -O tmp/facts.dot",
+    "clean": "mkdir tmp; rm tmp/*"
   },
   "keywords": [
     "ide",
@@ -17,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "datascript": "^0.13.3",
+    "fs": "0.0.2",
     "ramda": "^0.18.0"
   }
 }

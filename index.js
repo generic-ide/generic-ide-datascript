@@ -1,7 +1,9 @@
 // example code taken from https://github.com/tonsky/datascript/blob/master/test/js/tests.js
 var d = require('datascript');
 var R = require('ramda');
+var fs = require('fs');
 var kb = require('./knowledgebase.js');
+var gr = require('./graphs.js');
 
 function main() {
     const db = d.init_db(kb.pursuitFacts);
@@ -32,6 +34,24 @@ function main() {
             kb.purescriptRules
            )
     );
+
+    // find edges instead of just vertices
+    // TODO for now, we insert the 'definedIn' predicate until we figure out how to have the query insert it for us as a constant
+    const definedInRelation = R.map(gr.insertPredicateIntoPair("definedIn"),
+        d.q('[ :find  ?cn ?pn' +
+            '  :in    $ %' +
+            '  :where [?c "definedIn" ?p]'+
+            '         [?p "name" ?pn]'+
+            '         [?c "name" ?cn]'+
+            ']',
+            kb.pursuitFacts,
+            kb.purescriptRules
+           ));
+    console.log(definedInRelation);
+
+    const outFile = "./tmp/facts.dot";
+    // fs.writeFileSync(outFile, factsToGraphViz(kb.pursuitFacts));
+    fs.writeFileSync(outFile, gr.relationToGraphViz(definedInRelation));
 }
 
 main();
